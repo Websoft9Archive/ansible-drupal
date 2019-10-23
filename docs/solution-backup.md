@@ -63,9 +63,9 @@ This section provides Drupal online backup solution
 
 2. Log in Drupal console as administrator, install **Backup and Migrate** by uploading package
 
-3. 打开：【管理】>【配置】，打开【Backup and Migrate】
+3. Go to【Manage】>【configuration】, open【Backup and Migrate】
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-backupnow-websoft9.png)
 
-4. 开始设置备份策略
+4. Set your backup policy
 
-5. 通过 **Backup and Migrate** 实现的备份可以在线恢复
+5. You can also restore your data online by **Backup and Migrate** 

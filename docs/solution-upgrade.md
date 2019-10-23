@@ -26,13 +26,13 @@ apt update && apt upgrade -y
 
 ## Drupal Upgrade
 
-Drupal 目前没有提供在线升级，但官方正在开发中。手工更新的操作比较难，请自行研究
+Drupal don't have online Upgrade function, but Drupal have development plan.  
 
-> 在升级之前请做好服务器的快照备份，这个是必须的步骤，因为谁都无法保证升级 100% 成功。
+You should kown that manual upgrade is very difficult
 
-1. 登录 Drupal 后台，如果有升级需求系统会显示升级提示
+1. Log in Drupal, you can see the upgrade reminder if there have latest version of Drupal
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-update-websoft9.png)  
 
-2. 根据提示，手工完成 Drupal 内核更新
+2. Follow the prompts to manually complete the Drupal kernel update
 
-> 更多升级详情，请参考官方升级文档 [Drupal8 Upgrade](https://www.drupal.org/docs/8/update)
+> More details about upgrade, please refer to [Drupal8 Upgrade](https://www.drupal.org/docs/8/update)

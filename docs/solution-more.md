@@ -31,64 +31,64 @@ Drupal domain name binding steps:
 3. Save it and restart [Web Service](/admin-services.md#apache)
 
 
-## Drupal 更换域名
+## Drupal change domain
 
-如果 Drupal 需要更换域名，具体操作如下：
+You can change the domain of Drupal by the following steps:
 
-1. 完成新的域名解析和域名绑定
-2. 检查 [Drupal 配置文件](/zh/stack-components.html#drupal)中的域名值
-3. 检查 Drupal 根目录下 `.htaccess` 文件中域名值
-4. [重启 PHP-FPM 服务](/zh/admin-services.html#php-fpm)后生效
+1. Complete the new **Domain resolution and Domain binding**
+2. Check [Drupal configuration file](/zh/stack-components.html#drupal) related to domain
+3. Check `.htaccess` file in the Drupal root directory related to domain
+4. [Restart PHP-FPM service](/zh/admin-services.html#php-fpm)
 
-## Drupal 多语言
+## Drupal languages
 
-Drupal 支持多语言，下面是安装并设置多语言的主要步骤：
+Drupal supports multiple languages. Here are the main steps to install and set up multiple languages:
 
-1. 登录 Drupal，在后台 【管理】>【配置】>【地区和语言】中安装语言
+1. Log in Drupal, go to【Manage】>【Configuration】>【Regional and Language】, install your languge
   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-addlanguage-websoft9.png)
 
-2. 安装新语言后，根据实际需要，设置默认语言
+2. After installing a new language, set the default language according to actual needs.
 
-## Drupal 安装扩展
+## Drupal install Modules
 
-Drupal 提供的 [Drupal Modules](https://www.drupal.org/project/project_module)包含大量的扩展，下面介绍如何安装它们
+[Drupal Modules](https://www.drupal.org/project/project_module) have lots of Modules, below is the step for you to install it
 
-1. 打开 [Drupal Modules](https://www.drupal.org/project/project_module)网站，搜寻所需的扩展
+1. Visit [Drupal Modules](https://www.drupal.org/project/project_module) website, and search the Module you want to use
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-searchformodule-websoft9.png)
 
-2. 获取扩展的下载地址
+2. Get the dowload URL of your Module
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-dlmodule-websoft9.png)
 
-3. 登录 Drupal 后台，打开安装扩展的界面  
+3. Log in Drupal,open the Extend installation interface  
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-extend-websoft9.png)
 
-4. 通过输入下载地址，在线安装扩展  
+4. Go to【Mange】>【Extend】>【Install Extend】, input the URL for Extend installation  
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-install_manager_module-websoft9.png)
 
-5. 安装完成
+5. Install successfully
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-moduleinstalled-websoft9.png)
 
-6. 最后，需要到模块管理中启用刚安装的插件
+6. At last, enable the Theme you have installed online
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-enablemodule-websoft9.png)
 
-## Drupal 安装主题
+## Drupal install Themes
 
-Drupal 提供的 [Drupal Themes](https://www.drupal.org/project/project_theme) 包含大量的主题，下面介绍如何安装它们
+[Drupal Themes](https://www.drupal.org/project/project_theme) have lots of Themes, below is the step for you to install it
 
-1. 打开 [Drupal Themes](https://www.drupal.org/project/project_theme) 网站，搜寻所需的主题
+1. Visit [Drupal Themes](https://www.drupal.org/project/project_theme) website, and search the Theme you want to use
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-searchthemes-websoft9.png)
 
-2. 获取主题的下载地址
+2. Get the dowload URL of your Theme
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-themesurl-websoft9.png)
 
-3. 打开 【扩展管理】>【安装扩展】，选择【上传安装包文件】的方式上传你的模板，开始安装
+3. Open【Mange】>【Extend】>【Install Extend】, input the URL for Extend installation 
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-install_manager_module-websoft9.png)
 
-4. 安装后，打开【外观】，找到已经在线安装的主题，启用它
+4. Then, open【Appearance】 page, enable the Theme you have installed online
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-completeinstall-theme-websoft9.png)
 
-> 有些模板提供商，提供的模板压缩包中包含 Drupal 内核文件，这种情况下 **安装模板=安装Drupal**
+> Some Themes's zip package may have the Joomla core, at this time **Install Theme= Install Drupal**
 
-## Drupal 重置管理员密码
+## Drupal recover administrator password
 
-如果忘记了管理员密码，可以参考 [此处](https://www.drupal.org/node/44164) 重置密码
+If you don't remember your administrator password, please refer to the docs [here]((https://www.drupal.org/node/44164)) to reset it

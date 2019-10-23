@@ -80,7 +80,7 @@ Drupal 提供的 [Drupal Themes](https://www.drupal.org/project/project_theme) �
 2. 获取主题的下载地址
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-themesurl-websoft9.png)
 
-3. 打开 【扩展管理】>【安装扩展】，选择【上传安装包文件】的方式上传你的模板，开始安装
+3. 打开 【扩展管理】>【安装扩展】，输入下载地址，开始安装
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-installsmtp-websoft9.png)
 
 4. 安装后，打开【外观】，找到已经在线安装的主题，启用它
