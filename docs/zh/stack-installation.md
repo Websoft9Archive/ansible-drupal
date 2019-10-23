@@ -13,18 +13,18 @@
 1. 使用本地电脑的 Chrome 或 Firefox 浏览器访问网址：*http://域名* 或 *http://Internet IP*, 就进入引导首页
 
 2.  选择一门语言，进入下一步
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install001-websoft9.png)
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install001-websoft9.png)
 3.  选择一种安装方式，进入下一步
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install002-websoft9.png)
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install002-websoft9.png)
 4.  填写您的数据库参数（[查看数据库账号密码](https://support.websoft9.com/docs/lamp/zh/stack-accounts.html)），保存并继续;
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install003-websoft9.png)
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install003-websoft9.png)
 5.  分别完成网站安装和翻译安装
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install004-websoft9.png)
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install004-websoft9.png)
 6.  设置网站信息。站点维护账号及后台账号，请务必设置好并牢记之。进入下一步
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install005-websoft9.png)
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install005-websoft9.png)
 7.  系统完成最后一步安装
 8.  进入Drupal后台，体验完整功能
-    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-backend-websoft9.png)
+    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-backend-websoft9.png)
 
 > 需要了解更多 Drupal 的使用，请参考官方文档：[Drupal Community Guides](https://www.drupal.org/documentation)
 
@@ -44,6 +44,6 @@
 
 #### Drupal 状态报告中有错误怎么办？（见下图）
 
-![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-status-websoft9.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-status-websoft9.png)
 
 请根据提示完成系统升级或设置，不过这个设置不是必须的，此“错误”称之为“警告”更为合适

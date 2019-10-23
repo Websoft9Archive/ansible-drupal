@@ -31,7 +31,7 @@ Drupal 目前没有提供在线升级，但官方正在开发中。手工更新�
 > 在升级之前请做好服务器的快照备份，这个是必须的步骤，因为谁都无法保证升级 100% 成功。
 
 1. 登录 Drupal 后台，如果有升级需求系统会显示升级提示
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-update-websoft9.png)  
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-update-websoft9.png)  
 
 2. 根据提示，手工完成 Drupal 内核更新
 

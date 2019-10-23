@@ -25,8 +25,8 @@
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-setsmtp-websoft9.png)
 
 5. 填写准确的 SMTP 设置项信息
-   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-4-websoft9.png)
-   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-5-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-4-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-5-websoft9.png)
 
     * 发送模式选择“SMTP”，加密方式选择“SSL/TLS”;
     * 输入发送方邮箱地址；

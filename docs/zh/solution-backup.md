@@ -69,7 +69,7 @@ sidebarDepth: 3
 2. 登录 Drupal 后台，通过上传压缩文件的方式安装 **Backup and Migrate** ，启用之
 
 3. 打开：【管理】>【配置】，打开【Backup and Migrate】
-   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-backupnow-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-backupnow-websoft9.png)
 
 4. 开始设置备份策略
 

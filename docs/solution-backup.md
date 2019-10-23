@@ -51,7 +51,7 @@ The general manual backup operation steps are as follows:
 
 1. Compress and download the entire */data/wwwroot/drupal* directory by SFTP 
 2. Export Drupal's database by [phpMyAdmin](/admin-mysql.md)
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/mysql/phpmyadmin-export-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/phpmyadmin/phpmyadmin-export-websoft9.png)
 3. Put the source code file, data file and database file in the same folder, named according to the date
 4. Backup completed
 
@@ -64,7 +64,7 @@ This section provides Drupal online backup solution
 2. Log in Drupal console as administrator, install **Backup and Migrate** by uploading package
 
 3. 打开：【管理】>【配置】，打开【Backup and Migrate】
-   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-backupnow-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-backupnow-websoft9.png)
 
 4. 开始设置备份策略
 
