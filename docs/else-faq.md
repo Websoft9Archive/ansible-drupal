@@ -19,7 +19,7 @@ You can use the RDS for Drupal if you need,and just need to modify the database 
 
 #### Where is the database connection configuration of Drupal?
 
-Database configuration information in *config.php* in the [Drupal installation directory](/stack-components.md#joomla)
+Database configuration information in *config.php* in the [Drupal installation directory](/stack-components.md#drupal)
 
 #### If there is no domain name, can I deploy Drupal?
 
@@ -51,7 +51,7 @@ No, you don't need to change them because LAMP/LNMP was set to changed automatic
 
 #### How to modify the path of Drupal?
 
-Example application's path is: */data/wwwroot/joomla*, you can modify it by [vhost configuration file](/stack-components.md#apache)
+Example application's path is: */data/wwwroot/drupal*, you can modify it by [vhost configuration file](/stack-components.md#apache)
 
 #### How to delete 9Panel?
 

@@ -14,7 +14,7 @@
 
 若已完成 Drupal 安装向导，再通过 phpMyAdmin 修改数据库密码，Drupal 就会连不上数据库  
 
-需要修改 [Drupal 配置文件](/zh/stack-components.html#joomla) 对应的数据库 password 参数即可。
+需要修改 [Drupal 配置文件](/zh/stack-components.html#drupal) 对应的数据库 password 参数即可。
 
 #### Apache httpd 服务无法启动？
 

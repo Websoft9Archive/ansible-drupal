@@ -10,7 +10,7 @@ LAMP和LNMP代表支持 Drupal 运行所对应的基础环境，具体参考[环
 
 #### 是否可以使用云平台的 RDS 作为 Drupal 的数据库？
 
-可以，修改 [Drupal 配置文件](/zh/stack-components.html#joomla) 即可
+可以，修改 [Drupal 配置文件](/zh/stack-components.html#drupal) 即可
 
 #### Drupal能在 Windows 服务器上运行吗？
 
@@ -18,7 +18,7 @@ LAMP和LNMP代表支持 Drupal 运行所对应的基础环境，具体参考[环
 
 #### Drupal数据库连接配置信息在哪里？
 
-数据库配置信息 [Drupal 配置文件](/zh/stack-components.html#joomla)中
+数据库配置信息 [Drupal 配置文件](/zh/stack-components.html#drupal)中
 
 #### 如果没有域名是否可以部署 Drupal？
 
@@ -38,7 +38,7 @@ LAMP和LNMP代表支持 Drupal 运行所对应的基础环境，具体参考[环
 
 #### 是否可以修改 Drupal 的源码路径？
 
-可以，通过修改 [虚拟主机配置文件](/zh/stack-components.md#joomla)中相关参数
+可以，通过修改 [虚拟主机配置文件](/zh/stack-components.md#drupal)中相关参数
 
 #### 如何修改上传的文件权限?
 

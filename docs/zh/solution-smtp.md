@@ -15,11 +15,18 @@
    SMTP username: websoft9@163.com
    SMTP password: #wwBJ8    //此密码不是邮箱密码，是需要通过163邮箱后台设置去获取的授权码
    ```
-2. 登录 Drupal 后，打开：【系统管理】>【全局设置】>【服务器设置】，服务器邮件类型选择：SMTP
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/joomla/joomla-opensmtp-websoft9.png)
+2. 下载 [SMTP Authentication Support](https://www.drupal.org/project/smtp)（Drupal 默认没有安装 SMTP 模块），在线安装
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-installsmtp-websoft9.png)
 
-3. 填写准确的 SMTP 设置项信息
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/joomla/joomla-smtpsettings-websoft9.png)
+3. 打开：【管理】>【扩展】，找到【SMTP Authentication Support】，点击【安装】按钮
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-setsmtp-websoft9.png)
+
+3. 打开：【管理】>【配置】，找到【SMTP Authentication Support】，配置它
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-setsmtp-websoft9.png)
+
+5. 填写准确的 SMTP 设置项信息
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-4-websoft9.png)
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-smtp-5-websoft9.png)
 
     * 发送模式选择“SMTP”，加密方式选择“SSL/TLS”;
     * 输入发送方邮箱地址；
@@ -29,6 +36,6 @@
     * 输入该邮箱地址的SMTP服务的授权码或密码；
     * 存储凭据；
 
-3. 设置完成后，点击【发送测试邮件】，测试可用性
+3. 设置完成后，勾选【启用调试】，将发出测试邮件
      
 > 更多邮箱设置（QQ邮箱，阿里云邮箱，Gmail，Hotmail等）以及无法发送邮件等故障之诊断，请参考由Websoft9提供的 [SMTP 专题指南](https://support.websoft9.com/docs/faq/zh/tech-smtp.html)

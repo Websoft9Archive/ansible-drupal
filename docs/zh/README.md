@@ -6,18 +6,18 @@ home: false
 
 本文档由 [Websoft9](https://www.websoft9.com/) 公司提供，用于指导用户学习 Drupal 的安装部署与基本运维技术，包括：Drupal 部署、初始化安装、环境配置、HTTPS、SMTP、备份升级和连接云服务器操作等基本操作。
 
-[Drupal](https://joomla.org) 是全球三大开源内容管理系统之一（CMS），占据全球5%的建站市场。其拥有高度的可定制性和电子商务方面的优势，一旦突破最初的学习瓶颈之后，你可以用它进行广泛的Web应用开发，简直是无所不能。目前是由Open Source Matters（见扩展阅读）这个开放源码组织进行开发与支持，Drupal实际有两个开源的部分：一个是Drupal CMS（Drupal内容管理系统），它是网站的一个基础管理平台；另一个是Drupal Platform（Drupal框架）。
+[Drupal](https://www.drupal.org) 是全球三大开源内容管理系统之一，约3%的网站使用。Drupal也是一个开发框架，逻辑性强、一块块积木，搭起来以后使页面层层分明，它的内核中的有功能强大的PHP类库、函数库和API，能够通过二次化开发来构建复杂多用的企业级应用。Drupal有良好的商业生态，众多高端优质客户使用进一步推动了开源社区的发展。
 
-快速了解 Drupal，请查看[官方演示](https://launch.joomla.org)
+快速了解 Drupal，请查看[官方演示](https://www.drupal.org/try-drupal)
 
-![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/joomla/joomla-gui-websoft9.jpg)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-gui-websoft9.png)
 
 ---
 
 ## 改进
 
 本文档会持续改进，广泛吸收用户的需求。  
-如果您有好的想法，请点击页面下方”在Github上编辑“ 给我们反馈，欢迎Fork我们在[Github上的项目](https://github.com/Websoft9/ansible-joomla)。
+如果您有好的想法，请点击页面下方”在Github上编辑“ 给我们反馈，欢迎Fork我们在[Github上的项目](https://github.com/Websoft9/ansible-drupal)。
 
 ## 赞助
 

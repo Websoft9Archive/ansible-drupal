@@ -26,21 +26,13 @@ apt update && apt upgrade -y
 
 ## Drupal Upgrade
 
-Drupal provides a very user-friendly upgrade (update) portal
+Drupal 目前没有提供在线升级，但官方正在开发中。手工更新的操作比较难，请自行研究
 
-> Please completed backup of Server before any upgrade of Drupal
+> 在升级之前请做好服务器的快照备份，这个是必须的步骤，因为谁都无法保证升级 100% 成功。
 
-1. Log in Drupal backend, you can see the upgrade reminder when have latest version
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-bkupgradets-websoft9.png)  
+1. 登录 Drupal 后台，如果有升级需求系统会显示升级提示
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-update-websoft9.png)  
 
-2. Go to the upgrade interface, check the upgrade requirement and start to upgrade
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-update003-websoft9.png)
+2. 根据提示，手工完成 Drupal 内核更新
 
-3. Upgrading, wait for it
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-update004-websoft9.PNG)
-
-4. Upgrade successfully
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-update005-websoft9.PNG)
-
-5. You can upgrade extension of Drupal also
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-bkextupgrade-websoft9.png)
+> 更多升级详情，请参考官方升级文档 [Drupal8 Upgrade](https://www.drupal.org/docs/8/update)

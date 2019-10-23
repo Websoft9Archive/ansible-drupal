@@ -49,7 +49,7 @@ Manual backup for application is based on the **Exporting source code and databa
 ```
 The general manual backup operation steps are as follows:
 
-1. Compress and download the entire */data/wwwroot/joomla* directory by SFTP 
+1. Compress and download the entire */data/wwwroot/drupal* directory by SFTP 
 2. Export Drupal's database by [phpMyAdmin](/admin-mysql.md)
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/mysql/phpmyadmin-export-websoft9.png)
 3. Put the source code file, data file and database file in the same folder, named according to the date
@@ -59,14 +59,13 @@ The general manual backup operation steps are as follows:
 
 This section provides Drupal online backup solution
 
-1. Download extension [Akeeda](https://www.akeebabackup.com/download.html)
+1. Download module [Backup and Migrate](https://www.drupal.org/project/backup_migrate)
 
-2. Log in Drupal console as administrator, install Akeeka by uploading package
+2. Log in Drupal console as administrator, install **Backup and Migrate** by uploading package
 
-3. Go to【Dashboard】>【System】>【Control Panel】, find 【Backup is up-to-date】
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-backup-websoft9.png)
+3. 打开：【管理】>【配置】，打开【Backup and Migrate】
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-backupnow-websoft9.png)
 
-4. Set the backup
+4. 开始设置备份策略
 
-5. You can **Restore** Drupal with **Akeeda** also
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-restore-websoft9.png)
+5. 通过 **Backup and Migrate** 实现的备份可以在线恢复

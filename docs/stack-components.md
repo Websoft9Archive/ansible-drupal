@@ -6,8 +6,8 @@ The Drupal deployment package contains a sequence software (referred to as "comp
 
 ### Drupal
 
-Drupal installation directory: */data/wwwroot/joomla*  
-Drupal configuration file: */data/wwwroot/joomla/configuration.php*   
+Drupal installation directory: */data/wwwroot/drupal*  
+Drupal configuration file: */data/wwwroot/drupal/sites/default/settings.php*   
 
 ### PHP
 

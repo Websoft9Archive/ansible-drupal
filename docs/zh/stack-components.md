@@ -6,8 +6,8 @@ Drupal 预装包包含 Drupal 运行所需一序列支撑软件（简称为“�
 
 ### Drupal
 
-Drupal 安装目录： */data/wwwroot/joomla*  
-Drupal 配置文件： */data/wwwroot/joomla/configuration.php*  
+Drupal 安装目录： */data/wwwroot/drupal*  
+Drupal 配置文件： */data/wwwroot/drupal/sites/default/settings.php*  
 
 > Drupal 配置文件中包含数据库连接信息，更改了 MySQL 数据库账号密码，此处也需要对应修改
 

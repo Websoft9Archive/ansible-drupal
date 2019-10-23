@@ -12,29 +12,26 @@ If you have completed the Drupal deployment on Cloud Platform, the following ste
 
 1. Using local Chrome or Firefox to visit the URL *https://domain* or *https://Internet IP*, start to install  
 
-2. Set the site information and Super User Account Details,then Cick “next” button
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-installconf-websoft9.png)
+2. Choose a language, go to next step 
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/dp01.png)
+
+3. Select an installation profile 
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/dp02.png)
 
 3. Then configure the database connection information([Don't know password?](https://support.websoft9.com/docs/lamp/stack-accounts.html#mysql))
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-installdb-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/dp03.png)
 
-4. Click the "Next" button when complete the Database Configuration,the wizard will start to install.
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-installss-websoft9.png)
+5. Wait for installing
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/dp04.png)
 
-5. Click "Extra steps: Install languages" to install extra language 
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-installlanguages-websoft9.png)
+6. Set your administrator account for Drupal
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/dp05.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/dp06.png)
 
-6. Follow the prompts to set whether to enable the multi-language feature of the website and set the default front-back language
+7. Installed successfully
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/dp07.png)
 
-7. Click the “Remove installation folder” button
-
-8. Log in Drupal backend (URL is *http://domain/administrator*)
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-login-websoft9.png)
-
-9. You can use the Drupal backend to setup your site now
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-backend-websoft9.png)
-
-> Refer to [Drupal admin_manual](https://docs.joomla.org/Main_Page) to get more details
+> Refer to [Drupal Community Guides](https://www.drupal.org/documentation) to get more details
 
 ## Q&A
 
@@ -49,7 +46,3 @@ MySQL
 #### Can I use Cloud database for Drupal?
 
 Yes
-
-#### Drupal not the latest version?
-
-Completed the Drupal initial installation, the login backen can be updated online to the latest version with one click.

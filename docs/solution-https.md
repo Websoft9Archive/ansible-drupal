@@ -22,18 +22,18 @@ LAMP means that **Apache** for Web Server
    ``` text
    #-----HTTPS template start------------
    <VirtualHost *:443>
-    ServerName  joomla.yourdomain.com
-    DocumentRoot "/data/wwwroot/joomla"
-    #ErrorLog "logs/joomla.yourdomain.com-error_log"
-    #CustomLog "logs/joomla.yourdomain.com-access_log" common
-    <Directory "/data/wwwroot/joomla">
+    ServerName  drupal.yourdomain.com
+    DocumentRoot "/data/wwwroot/drupal"
+    #ErrorLog "logs/drupal.yourdomain.com-error_log"
+    #CustomLog "logs/drupal.yourdomain.com-access_log" common
+    <Directory "/data/wwwroot/drupal">
     Options Indexes FollowSymlinks
     AllowOverride All
     Require all granted
     </Directory>
     SSLEngine on
-    SSLCertificateFile  /data/cert/joomla.yourdomain.com.crt
-    SSLCertificateKeyFile  /data/cert/joomla.yourdomain.com.key
+    SSLCertificateFile  /data/cert/drupal.yourdomain.com.crt
+    SSLCertificateKeyFile  /data/cert/drupal.yourdomain.com.key
     </VirtualHost>
    #-----HTTPS template end------------
    ```

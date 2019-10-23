@@ -54,24 +54,23 @@ sidebarDepth: 3
 ```
 通用的手动备份操作步骤如下：
 
-1. 通过 WinSCP 将网站源码目录（*/data/wwwroot/joomla*）**压缩后**再完整的下载到本地
+1. 通过 WinSCP 将网站源码目录（*/data/wwwroot/drupal*）**压缩后**再完整的下载到本地
 2. 通过 phpMyAdmin 导出 Drupal 数据库
   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/mysql/phpmyadmin-export-websoft9.png)
 3. 将程序文件、数据文件和数据库文件放到同一个文件夹，根据日期命名
 4. 备份工作完成
 
-### Drupal 后台备份
+### Drupal 后台备份&恢复
 
 通过安装 Drupal 扩展，可以实现后台在线备份：
 
-1. 下载 [Akeeda](https://www.akeebabackup.com/download.html)
+1. 下载 [Backup and Migrate](https://www.drupal.org/project/backup_migrate)
 
-2. 登录 Drupal 后台，通过上传压缩文件的方式安装 **Akeeda** 
+2. 登录 Drupal 后台，通过上传压缩文件的方式安装 **Backup and Migrate** ，启用之
 
-3. 打开：【Dashboard】>【System】>【Control Panel】，找到【Backup is up-to-date】
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-backup-websoft9.png)
+3. 打开：【管理】>【配置】，打开【Backup and Migrate】
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-backupnow-websoft9.png)
 
 4. 开始设置备份策略
 
-5. 通过 Akeeda 实现的备份可以在线恢复
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/joomla/joomla-restore-websoft9.png)
+5. 通过 **Backup and Migrate** 实现的备份可以在线恢复

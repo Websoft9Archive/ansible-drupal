@@ -17,60 +17,77 @@ Drupal 域名绑定操作步骤：
 
      <VirtualHost *:80>
      ServerName  www.mydomain.com # 修改成您的实际域名
-     DocumentRoot "/data/wwwroot/joomla"
+     DocumentRoot "/data/wwwroot/drupal"
      ...
      
    #### Drupal(LNMP) bind domain #### 
 
      server {
       listen 80;
-      server_name joomla.example.com; # 修改成您的实际域名
+      server_name drupal.example.com; # 修改成您的实际域名
      ...
 
    ```
 3. 保存配置文件，[重启服务](/zh/admin-services.html#apache)
 
+## Drupal 更换域名
+
+如果 Drupal 需要更换域名，具体操作如下：
+
+1. 完成新的域名解析和域名绑定
+2. 检查 [Drupal 配置文件](/zh/stack-components.html#drupal)中的域名值
+3. 检查 Drupal 根目录下 `.htaccess` 文件中域名值
+4. [重启 PHP-FPM 服务](/zh/admin-services.html#php-fpm)后生效
+
 ## Drupal 多语言
 
 Drupal 支持多语言，下面是安装并设置多语言的主要步骤：
 
-1. 登录 Drupal，在后台 【扩展管理】>【语言管理】中安装语言
-  ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/joomla/joomla-bkinstalllan-websoft9.png)
+1. 登录 Drupal，在后台 【管理】>【配置】>【地区和语言】中安装语言
+  ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-addlanguage-websoft9.png)
 
-2. 然后设置前后台的默认语言
-  ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/joomla/joomla-bkenablelang-websoft9.png)
+2. 安装新语言后，根据实际需要，设置默认语言
 
-## Drupal 扩展
+## Drupal 安装扩展
 
-Drupal 后台集成了 [Drupal! Extensions Directory™](https://extensions.joomla.org/) 大量的扩展，下面介绍如何安装它们
+Drupal 提供的 [Drupal Modules](https://www.drupal.org/project/project_module)包含大量的扩展，下面介绍如何安装它们
 
-1. 登录 Drupal
-2. 打开【扩展管理】>【安装扩展】，建议选择【从扩展目录安装】的方式在线寻找扩展
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/joomla/joomla-bkinstallext-websoft9.png)
-3. 安装你所需的扩展
+1. 打开 [Drupal Modules](https://www.drupal.org/project/project_module)网站，搜寻所需的扩展
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-searchformodule-websoft9.png)
 
-## Drupal 安装模板
+2. 获取扩展的下载地址
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-dlmodule-websoft9.png)
 
-Drupal 的模板安装，主要通过上传模板安装包的方式实现：
+3. 登录 Drupal 后台，打开安装扩展的界面
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-extend-websoft9.png)
 
-1. 准备好你的模板安装包（一般是 .zip 文件）
+4. 通过输入下载地址，在线安装扩展
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-installsmtp-websoft9.png)
 
-2. 登录 Drupal 后台
+5. 安装完成
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-moduleinstalled-websoft9.png)
+
+6. 最后，需要到模块管理中启用刚安装的插件
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-enablemodule-websoft9.png)
+
+## Drupal 安装主题
+
+Drupal 提供的 [Drupal Themes](https://www.drupal.org/project/project_theme) 包含大量的主题，下面介绍如何安装它们
+
+1. 打开 [Drupal Themes](https://www.drupal.org/project/project_theme) 网站，搜寻所需的主题
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-searchthemes-websoft9.png)
+
+2. 获取主题的下载地址
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-themesurl-websoft9.png)
 
 3. 打开 【扩展管理】>【安装扩展】，选择【上传安装包文件】的方式上传你的模板，开始安装
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/joomla/joomla-bkuploadext-websoft9.png)
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-installsmtp-websoft9.png)
 
-4. 安装后，打开【扩展管理】>【模板管理】>【风格管理】，找到已经安装的模板，启用它
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/joomla/joomla-bkenabletemplate-websoft9.png)
+4. 安装后，打开【外观】，找到已经在线安装的主题，启用它
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-themeenable-websoft9.png)
 
 > 有些模板提供商，提供的模板压缩包中包含 Drupal 内核文件，这种情况下 **安装模板=安装Drupal**
 
-## Drupal Cache
-
-Drupal 后台提供了缓存管理功能，参考下图：
-
-![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/joomla/joomla-cache-websoft9.png)
-
 ## Drupal 重置管理员密码
 
-如果忘记了管理员密码，可以参考 [此处](https://docs.joomla.org/How_do_you_recover_or_reset_your_admin_password%3F/zh-cn) 重置密码
+如果忘记了管理员密码，可以参考 [此处](https://www.drupal.org/node/44164) 重置密码
