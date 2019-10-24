@@ -16,7 +16,7 @@
     ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install001-websoft9.png)
 3.  选择一种安装方式，进入下一步
     ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install002-websoft9.png)
-4.  填写您的数据库参数（[查看数据库账号密码](https://support.websoft9.com/docs/lamp/zh/stack-accounts.html)），保存并继续;
+4.  填写您的数据库参数（[查看数据库账号密码](/zh/stack-accounts.md#mysql)），保存并继续;
     ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install003-websoft9.png)
 5.  分别完成网站安装和翻译安装
     ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-install004-websoft9.png)

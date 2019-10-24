@@ -18,7 +18,7 @@ If you have completed the Drupal deployment on Cloud Platform, the following ste
 3. Select an installation profile 
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/dp02.png)
 
-3. Then configure the database connection information([Don't know password?](https://support.websoft9.com/docs/lamp/stack-accounts.html#mysql))
+3. Then configure the database connection information([Don't know password?](/stack-accounts.md#mysql))
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/dp03.png)
 
 5. Wait for installing
