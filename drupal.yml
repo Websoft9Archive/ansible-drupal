@@ -1,4 +1,4 @@
-- name: nextcloud
+- name: drupal
   hosts: local
   connection: local
   gather_facts: False
@@ -25,15 +25,15 @@
         path: roles/.git
         state: absent
 
-# 服务器前置任务（ubuntu使用）
-- name: drupal
-  hosts: drupal
-  become: yes
-  become_method: sudo
-  gather_facts: False
-  pre_tasks:
-    - name: Install Python
-      raw: sudo apt-get install python -y
+# # 服务器前置任务（ubuntu使用）
+# - name: drupal
+#   hosts: drupal
+#   become: yes
+#   become_method: sudo
+#   gather_facts: False
+#   pre_tasks:
+#     - name: Install Python
+#       raw: sudo apt-get install python -y
 
 ## 部署
 - name: drupal
@@ -41,12 +41,14 @@
   become: yes
   become_method: sudo
   vars:
-    drupal: http://libs.websoft9.com/apps/drupal-8.6.9.zip
+    drupal: https://www.drupal.org/download-latest/zip
 
   roles:
-    - {role: common, tags: "common"}
-    - {role: apache, tags: "apache"}
-    - {role: mysql, tags: "mysql"}
-    - {role: php-fpm, tags: "php-fpm"}
-    - {role: phpmyadmin, tags: "phpmyadmin"}
+    # - {role: common, tags: "common"}
+    # - {role: apache, tags: "apache"}
+    # - {role: mysql, tags: "mysql"}
+    # - {role: php-fpm, tags: "php-fpm"}
+    # - {role: lamp, tags: "lamp"}
+    # - {role: phpmyadmin, tags: "phpmyadmin"}
+    # - {role: 9panel, tags: "9panel"}
     - {role: drupal, tags: "drupal"}
