@@ -57,4 +57,6 @@
    ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-settings-2-websoft9.jpg)
 4. 重新上传至原目录下；
 5. 执行 *chown -R apache: /data/wwwroot/drupal* 命令，刷新页面，错误提示消失。
+   
+> 官方参考链接：https://www.drupal.org/docs/8/install/trusted-host-settings
 
