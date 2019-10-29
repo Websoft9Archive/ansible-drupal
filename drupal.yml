@@ -43,11 +43,11 @@
   vars:
     drupal: https://www.drupal.org/download-latest/zip
   roles:
-    # - {role: common, tags: "common"}
-    # - {role: apache, tags: "apache"}
-    # - {role: mysql, tags: "mysql"}
-    # - {role: php-fpm, tags: "php-fpm"}
-    # - {role: lamp, tags: "lamp"}
-    # - {role: phpmyadmin, tags: "phpmyadmin"}
-    # - {role: 9panel, tags: "9panel"}
+    - {role: common, tags: "common"}
+    - {role: apache, tags: "apache"}
+    - {role: mysql, tags: "mysql"}
+    - {role: php-fpm, tags: "php-fpm"}
+    - {role: lamp, tags: "lamp"}
+    - {role: phpmyadmin, tags: "phpmyadmin"}
+    - {role: 9panel, tags: "9panel"}
     - {role: drupal, tags: "drupal"}
