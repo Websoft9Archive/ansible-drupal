@@ -1,6 +1,6 @@
 ## 部署
 - name: drupal
-  hosts: drupal
+  hosts: all
   become: yes
   become_method: sudo
   vars:
