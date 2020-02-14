@@ -1,53 +1,16 @@
 ---
-# Drupal
-- name: Get WebServer
-  shell: nginx -v
-  register: nginx_ver
-  ignore_errors: yes
-  
-- name: Delete www.exampla.com directory
-  file:
-    path: /data/wwwroot/www.example.com
-    state: absent
+#引入PHP运行环境元数据，并初始化
+- include_vars: roles/role_php-fpm/vars/php_runtime_meta.yml
 
-# 下载
-- name: Download Drupal
-  unarchive:
-    src: "{{ drupal }}"
-    dest: /data/wwwroot
-    owner: apache
-    group: apache
-    remote_src: yes
+#Modify var for this playbook
+- set_fact:
+    drupal_vhost_dir: "{{php_runtime_meta[ansible_distribution][drupal_webs].vhost_dir}}"
+    drupal_vhost_src: "{{php_runtime_meta[ansible_distribution][drupal_webs].vhost_src}}"
+    drupal_service: "{{php_runtime_meta[ansible_distribution][drupal_webs].service}}"
+    drupal_owner: "{{php_runtime_meta[ansible_distribution][drupal_webs].owner}}"
 
-- name: Rename folder
-  shell: mv /data/wwwroot/drupal-* /data/wwwroot/drupal
-
-- name: Copy Apache Config
-  template: src=vhost.conf dest=/etc/httpd/vhost
-
-- name: restart Apache
-  service: name=httpd state=restarted enabled=yes
-
-# 创建数据库
-- name: Get MySQL Password
-  shell: cat /credentials/password.txt | awk 'NR==2' |awk -F ":" '{print $2}'
-  register: mysql_password
-
-- name: Create Drupal databases
-  mysql_db:
-    login_user: root
-    login_password: "{{mysql_password.stdout}}"
-    name: drupal
-    state: present
-
-- name: Create Drupal databases user
-  mysql_user:
-    login_user: root
-    login_password: "{{mysql_password.stdout}}"
-    name: drupal
-    password: "{{mysql_password.stdout}}"
-    priv: 'drupal.*:ALL'
-    state: present
+- debug:
+    msg: runtime {{ drupal_vhost_dir }}, {{drupal_vhost_src}}, {{drupal_service}}, {{drupal_owner}}, {{drupal_webs}}, {{ansible_distribution}}
 
 # 9panel
 - name: Enable 9panel I
@@ -56,30 +19,38 @@
     regexp: 'var set_apps=\["Example"\];'
     line: 'var set_apps=["Drupal"];'
 
+# Drupal
+- name: Delete www.exampla.com directory
+  file:
+    path: /data/wwwroot/www.example.com
+    state: absent
+
+- name: Create Directory
+  file:
+    path: /data/wwwroot/drupal
+    state: directory
+    mode: 0755
+  
+- name: Download drupal
+  git:
+    repo: https://github.com/drupal/drupal.git
+    dest: /data/wwwroot/drupal
+    version: "{{drupal_version}}"
+
+# 系统通用
 - name: Permission directory
   shell: find /data/wwwroot -type d -exec chmod 750 {} \;
   
 - name: Permission file
   shell: find /data/wwwroot -not -type d -exec chmod 640 {} \;
 
-- name: System Upgrade
-  yum: name=* state=latest
+# 根据不同的基础环境分别处理
+- block:
+  - name: change owner&group for Apache
+    shell: chown -R {{drupal_owner}}:{{drupal_owner}} /data/wwwroot
 
-# 随机密码
-- name: Databases Random Password
-  copy: 
-    src: init.sh
-    dest: /root/
-    mode: 0750
-
-- name: Setting Startup
-  lineinfile:
-    path: /etc/rc.d/rc.local
-    regexp: '/root/init.sh'
-    line: '/root/init.sh'
-    mode: 0750
-
-# 初始化 on azure
-- name: initialize azure vm
-  shell:  waagent -deprovision+user --force
-  when: cloud == "azure"
+  - name: Copy Apache or Nginx vhost configuration
+    copy: src={{drupal_vhost_src}} dest={{drupal_vhost_dir}}
+    
+  - name: restart Apache or Nginx
+    service: name={{drupal_service}} state=restarted enabled=yes
