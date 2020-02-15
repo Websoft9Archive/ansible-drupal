@@ -1,5 +1,5 @@
 #Drupal版本，需定期维护
-drupal_version: v3.8.1
+drupal_version: 8.8.2
 
 #Web服务器：apache | nginx，通过交互式选择获取
 drupal_webs: apache
