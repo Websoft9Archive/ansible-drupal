@@ -22,7 +22,7 @@
     path: /data/wwwroot/www.example.com
     state: absent
 
-- name: Create Directory
+- name: Delete drupal Directory
   file:
     path: /data/wwwroot/{{drupal_name}}
     state: absent
