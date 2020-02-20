@@ -35,9 +35,12 @@
   
 - name: Download drupal
   git:
-    repo: 
+    repo: "{{drupal_download_url}}"
     dest: /data/wwwroot/drupal
     version: "{{drupal_version}}"
+
+- name: Rename directory name
+  shell: mv /data/wwwroot/* /data/wwwroot/{{drupal_name}}
 
 # 系统通用
 - name: Permission directory
