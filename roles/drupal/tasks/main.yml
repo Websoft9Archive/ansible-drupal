@@ -17,15 +17,8 @@
     msg: runtime {{ drupal_vhost_dir }}, {{drupal_vhost_src}}, {{drupal_service}}, {{drupal_owner}}, {{drupal_webs}}, {{ansible_distribution}}
 
 # Drupal
-- name: Delete www.exampla.com directory
-  file:
-    path: /data/wwwroot/www.example.com
-    state: absent
-
-- name: Delete drupal Directory
-  file:
-    path: /data/wwwroot/{{drupal_name}}
-    state: absent
+- name: Remove extra dir
+  shell: rm -rf /data/wwwroot/*
 
 - name: Create Directory
   file:
@@ -38,9 +31,6 @@
     repo: "{{drupal_download_url}}"
     dest: /data/wwwroot/drupal
     version: "{{drupal_version}}"
-
-- name: Rename directory name
-  shell: mv /data/wwwroot/* /data/wwwroot/{{drupal_name}}
 
 # 系统通用
 - name: Permission directory
