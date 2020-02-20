@@ -11,7 +11,7 @@
     drupal_name: "drupal"
     drupal_title: "Drupal"
     drupal_download_url: "https://github.com/drupal/drupal.git"
-    drupal_version: "8.8.2"
+    drupal_version: "8.8.1"
 
 - debug:
     msg: runtime {{ drupal_vhost_dir }}, {{drupal_vhost_src}}, {{drupal_service}}, {{drupal_owner}}, {{drupal_webs}}, {{ansible_distribution}}
