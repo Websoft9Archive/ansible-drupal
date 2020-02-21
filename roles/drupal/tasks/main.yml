@@ -31,7 +31,7 @@
     version: "{{drupal_version}}"
 
 - name: Rename dir name
-  shell: if [ ! -d "/data/wwwroot/{{drupal_name}}" ]; then mv *{{drupal_name}}* {{drupal_name}}; fi
+  shell: cd /data/wwwroot; if [ ! -d "{{drupal_name}}" ]; then mv *{{drupal_name}}* {{drupal_name}}; fi
 
 # 系统通用
 - name: Permission directory
