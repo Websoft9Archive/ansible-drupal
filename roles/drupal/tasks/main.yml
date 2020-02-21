@@ -8,17 +8,15 @@
     drupal_vhost_src: "{{php_runtime_meta[ansible_distribution][drupal_webs].vhost_src}}"
     drupal_service: "{{php_runtime_meta[ansible_distribution][drupal_webs].service}}"
     drupal_owner: "{{php_runtime_meta[ansible_distribution][drupal_webs].owner}}"
-    drupal_name: "drupal"
-    drupal_title: "Drupal"
-    drupal_download_url: "https://github.com/drupal/drupal.git"
-    drupal_version: "8.8.1"
 
 - debug:
     msg: runtime {{ drupal_vhost_dir }}, {{drupal_vhost_src}}, {{drupal_service}}, {{drupal_owner}}, {{drupal_webs}}, {{ansible_distribution}}
 
 # Drupal
 - name: Remove extra dir
-  shell: rm -rf /data/wwwroot/*
+  shell: |
+    rm -rf /data/wwwroot/www.example.com
+    rm -rf /data/wwwroot/{{drupal_name}}
 
 - name: Create Directory
   file:
