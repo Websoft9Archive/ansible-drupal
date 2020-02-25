@@ -12,30 +12,26 @@
 - debug:
     msg: runtime {{ drupal_vhost_dir }}, {{drupal_vhost_src}}, {{drupal_service}}, {{drupal_owner}}, {{drupal_webs}}, {{ansible_distribution}}
 
-# 9panel
-- name: Enable 9panel I
-  lineinfile:
-    path: /data/apps/9panel/js/websoft9.js
-    regexp: 'var set_apps=\["Example"\];'
-    line: 'var set_apps=["Drupal"];'
-
 # Drupal
-- name: Delete www.exampla.com directory
-  file:
-    path: /data/wwwroot/www.example.com
-    state: absent
+- name: Remove extra dir
+  shell: |
+    rm -rf /data/wwwroot/www.example.com
+    rm -rf /data/wwwroot/{{drupal_name}}
 
 - name: Create Directory
   file:
-    path: /data/wwwroot/drupal
+    path: /data/wwwroot/{{drupal_name}}
     state: directory
     mode: 0755
   
 - name: Download drupal
   git:
-    repo: https://github.com/drupal/drupal.git
+    repo: "{{drupal_download_url}}"
     dest: /data/wwwroot/drupal
     version: "{{drupal_version}}"
+
+- name: Rename dir name
+  shell: cd /data/wwwroot; if [ ! -d "{{drupal_name}}" ]; then mv *{{drupal_name}}* {{drupal_name}}; fi
 
 # 系统通用
 - name: Permission directory
