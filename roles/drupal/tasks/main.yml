@@ -4,10 +4,10 @@
 
 #Modify var for this playbook
 - set_fact:
-    drupal_vhost_dir: "{{php_runtime_meta[ansible_distribution][drupal_webs].vhost_dir}}"
-    drupal_vhost_src: "{{php_runtime_meta[ansible_distribution][drupal_webs].vhost_src}}"
-    drupal_service: "{{php_runtime_meta[ansible_distribution][drupal_webs].service}}"
-    drupal_owner: "{{php_runtime_meta[ansible_distribution][drupal_webs].owner}}"
+    drupal_vhost_dir: "{{php_runtime_meta[ansible_os_family][drupal_webs].vhost_dir}}"
+    drupal_vhost_src: "{{php_runtime_meta[ansible_os_family][drupal_webs].vhost_src}}"
+    drupal_service: "{{php_runtime_meta[ansible_os_family][drupal_webs].service}}"
+    drupal_owner: "{{php_runtime_meta[ansible_os_family][drupal_webs].owner}}"
 
 - debug:
     msg: runtime {{ drupal_vhost_dir }}, {{drupal_vhost_src}}, {{drupal_service}}, {{drupal_owner}}, {{drupal_webs}}, {{ansible_distribution}}
