@@ -14,31 +14,22 @@
 
 # Drupal
 - name: Remove extra dir
-  shell: |
-    rm -rf /data/wwwroot/www.example.com
-    rm -rf /data/wwwroot/{{drupal_name}}
-
-- name: Create Directory
-  file:
-    path: /data/wwwroot/{{drupal_name}}
-    state: directory
-    mode: 0755
+  shell: rm -rf /data/wwwroot/*{{drupal_name}}*
   
 - name: Download drupal
-  git:
-    repo: "{{drupal_download_url}}"
-    dest: /data/wwwroot/drupal
-    version: "{{drupal_version}}"
+  urarchive:
+    src: "{{drupal_download_url}}"
+    dest: /data/wwwroot/
+    remote_src: yes
 
 - name: Rename dir name
   shell: cd /data/wwwroot; if [ ! -d "{{drupal_name}}" ]; then mv *{{drupal_name}}* {{drupal_name}}; fi
 
 # 系统通用
 - name: Permission directory
-  shell: find /data/wwwroot -type d -exec chmod 750 {} \;
-  
-- name: Permission file
-  shell: find /data/wwwroot -not -type d -exec chmod 640 {} \;
+  shell: |
+    find /data/wwwroot -type d -exec chmod 750 {} \;
+    find /data/wwwroot -not -type d -exec chmod 640 {} \;
 
 # 根据不同的基础环境分别处理
 - block:
@@ -46,7 +37,7 @@
     shell: chown -R {{drupal_owner}}:{{drupal_owner}} /data/wwwroot
 
   - name: Copy Apache or Nginx vhost configuration
-    copy: src={{drupal_vhost_src}} dest={{drupal_vhost_dir}}
+    template: src={{drupal_vhost_src}} dest={{drupal_vhost_dir}}
     
   - name: restart Apache or Nginx
     service: name={{drupal_service}} state=restarted enabled=yes
