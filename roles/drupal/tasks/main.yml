@@ -17,7 +17,7 @@
   shell: rm -rf /data/wwwroot/*{{drupal_name}}*
   
 - name: Download drupal
-  unrarchive:
+  unarchive:
     src: "{{drupal_download_url}}"
     dest: /data/wwwroot/
     remote_src: yes
