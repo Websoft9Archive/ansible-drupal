@@ -8,6 +8,7 @@
     drupal_vhost_src: "{{php_runtime_meta[ansible_os_family][drupal_webs].vhost_src}}"
     drupal_service: "{{php_runtime_meta[ansible_os_family][drupal_webs].service}}"
     drupal_owner: "{{php_runtime_meta[ansible_os_family][drupal_webs].owner}}"
+    drupal_db_password: "{{mysql_root_password}}"
 
 - debug:
     msg: runtime {{ drupal_vhost_dir }}, {{drupal_vhost_src}}, {{drupal_service}}, {{drupal_owner}}, {{drupal_webs}}, {{ansible_distribution}}
@@ -41,3 +42,6 @@
     
   - name: restart Apache or Nginx
     service: name={{drupal_service}} state=restarted enabled=yes
+
+  - name: restart php-fpm
+    service: name=php-fpm state=restarted
