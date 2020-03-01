@@ -24,16 +24,15 @@
 
 ## 本项目安装的是 drupal 最新版吗？
 
-本项目通过下载[drupal源码](https://github.com/drupal/drupal.git)进行安装，其中版本号存储在：[role/drupal/default/main.yml](/roles/drupal/defaults/main.yml)
+本项目通过[drupal下载中心（可查看版本号）](https://www.drupal.org/project/drupal)进行安装，下载地址存储在：[role/drupal/default/main.yml](/roles/drupal/defaults/main.yml)
 
 ```
-#drupal版本，需定期维护
-drupal_version: 8.8.2
+#drupal版本，无需维护
+drupal_download_url: "https://www.drupal.org/download-latest/zip" 
 ```
+Drupal官方提供的下载地址是一个相对固定不变的地址，并且在不带版本号的情绪下下载最新版本。  
 
-如果你想修改版本号，请先查看 drupal 仓库 [tags](https://github.com/drupal/drupal/tags) 标签值，再修改上面的 `drupal_version` 变量值。
-
-我们会定期检查版本，并测试官方版本的可用性，以保证用户可以顺利安装最新版。
+即便如此，我们会定期检查版本，并测试官方版本的可用性，以保证用户可以顺利安装最新版。
 
 ## 安装指南
 
@@ -61,8 +60,3 @@ wget -N https://raw.githubusercontent.com/Websoft9/linux/master/ansible_script/i
 
 - 命令脚本部署与镜像部署有什么区别？请参考：[镜像部署-vs-脚本部署](https://support.websoft9.com/docs/faq/zh/bz-product.html#镜像部署-vs-脚本部署)
 - 本项目支持在 Ansible Tower 上运行吗？支持
-
-## To do
-
-* 添加 Nginx 支持
-* 添加 Ubuntu18.04, Amazon Linux2 支持
