@@ -24,13 +24,13 @@
 
 ## 本项目安装的是 drupal 最新版吗？
 
-本项目通过[drupal下载中心（可查看版本号）](https://www.drupal.org/project/drupal)进行安装，下载地址存储在：[role/drupal/default/main.yml](/roles/drupal/defaults/main.yml)
+本项目通过[drupal下载中心（可查看版本号）](https://www.drupal.org/project/drupal)进行安装，下载地址存储在：[role/drupal/default/main.yml](/roles/drupal/defaults/main.yml)，可根据需求更改[/roles/mediawiki/defaults/main.yml](/roles/mediawiki/defaults/main.yml) 文件中的 ```drupal_download_url``` 来安装指定版本。
 
 ```
 #drupal版本，无需维护
 drupal_download_url: "https://www.drupal.org/download-latest/zip" 
 ```
-Drupal官方提供的下载地址是一个相对固定不变的地址，并且在不带版本号的情绪下下载最新版本。  
+Drupal官方提供的下载地址是一个相对固定不变的地址，并且在不带版本号的情况下下载最新版本。  
 
 即便如此，我们会定期检查版本，并测试官方版本的可用性，以保证用户可以顺利安装最新版。
 
