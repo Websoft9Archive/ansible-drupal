@@ -22,15 +22,6 @@ mysql_users:
 # 初始化MySQL root密码
 init_db: 
     mysql:
-      user: root
-      password: "123456"  
-  
-# 应用数据库信息
-init_application:
-  drupal:
-    service: php-fpm
-    database: drupal 
-    database_user: drupal
-    database_host: localhost
-    database_password: "123456"
-    
+      admin: root
+      user: ["drupal"]
+      password: "123456" 
