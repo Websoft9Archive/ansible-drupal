@@ -12,7 +12,6 @@ preend_certbot: True
 # 生成应用数据库和用户
 mysql_databases:
  - name: drupal
-   encoding: utf8
  
 mysql_users:
  - name: drupal
