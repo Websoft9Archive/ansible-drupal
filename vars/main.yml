@@ -7,7 +7,7 @@ mysql_root_password: "123456"
 phpmyadmin_mysql_password: "123456"
 php_version: "7.2"
 
-preend_certbot: True
+common_os_support: ["CentOS"]
 
 # 生成应用数据库和用户
 mysql_databases:
