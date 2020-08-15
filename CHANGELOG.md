@@ -16,5 +16,6 @@
 
 ### Features
 
+* 2020-08-15  Change to phpMyAdmin on Docker
 * 2020-02-27  测试成功
 * 2020-02-14  改写项目
