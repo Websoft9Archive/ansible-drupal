@@ -4,9 +4,12 @@ region: "0"
 common_os_support: ["CentOS", "Amazon"]
 
 apache_certbot: True
-nginx_certbot: True
 apache_appname: "drupal"
+apache_vhost_mode: "www"
+
+nginx_certbot: True
 nginx_appname: "drupal"
+nginx_vhost_mode: "www"
 
 mysql_remote: True
 mysql_version: "5.7" 
@@ -22,11 +25,10 @@ mysql_databases:
  
 mysql_users:
  - name: drupal
-   host: localhost
    priv: 'drupal.*:ALL'
 
 init_db: 
     mysql:
       admin: root
       user: ["drupal"]
-      password: "123456" 
+      password: "123456"
