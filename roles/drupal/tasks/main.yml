@@ -14,7 +14,7 @@
     msg: runtime {{ drupal_vhost_dir }}, {{drupal_vhost_src}}, {{drupal_service}}, {{drupal_owner}}, {{drupal_webs}}, {{ansible_distribution}}
 
 # Drupal
-- name: Remove extra dir
+- name: Remove extra dir for sec_installation
   shell: rm -rf /data/wwwroot/{{drupal_name}}
   
 - name: Create drupal User
@@ -22,17 +22,56 @@
     name: drupal
     shell: /bin/bash
 
+- name: Create drupal cli directory
+  file:
+    path: '/data/wwwroot/{{item}}'
+    state: directory
+    recurse: yes
+  with_items:
+    - drupal_console
+    - drush
+
 - name: Add drupal Permission
   shell: |
     setfacl -R -m  u:drupal:rwx /data/wwwroot/
     setfacl -m u:drupal:rx /bin/composer
 
-- name: Use composer install drupal
-  shell: composer create-project drupal/recommended-project /data/wwwroot/{{drupal_name}}
+- block:  
+  - name: Use composer install drupal 
+    shell: composer create-project drupal/recommended-project /data/wwwroot/{{drupal_name}}
+
+  - name: Use composer install drush cli
+    shell: composer require drush/drush
+    args:
+      chdir: /data/wwwroot/drush
+  
+  - name: Use composer install drupal_console cli
+    shell: composer require drupal/console:~1.0 --prefer-dist --optimize-autoloader
+    args:
+      chdir: /data/wwwroot/drupal_console
   become_method: su
   become_user: drupal
 
-# 系统通用
+- block:
+  - name: Get  drush cli 
+    shell: ls /data/wwwroot/drush/vendor/bin/
+    register: drush_cli
+
+  - name: Get drupal_console cli
+    shell: ls /data/wwwroot/drupal_console/vendor/bin/
+    register: drupal_console_cli
+
+  - name: Set link for cli
+    file:
+      src: '{{item.src}}'
+      dest: '{{item.dest}}'
+      state: link
+      force: yes
+    with_items: 
+      - {{'src: /data/wwwroot/drush/vendor/bin/{{drush_cli.stdout_lines |list}}' ,dest: /usr/bin/}}
+      - {{'src: /data/wwwroot/drupal_console/vendor/bin/{{drupal_console_cli.stdout_lines |list}}' ,dest: /usr/bin/}}
+
+  # 系统通用
 - name: Permission directory
   shell: |
     find /data/wwwroot -type d -exec chmod 750 {} \;
