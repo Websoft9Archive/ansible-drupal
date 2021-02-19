@@ -15,16 +15,22 @@
 
 # Drupal
 - name: Remove extra dir
-  shell: rm -rf /data/wwwroot/*{{drupal_name}}*
+  shell: rm -rf /data/wwwroot/{{drupal_name}}
   
-- name: Download drupal
-  unarchive:
-    src: "{{drupal_download_url}}"
-    dest: /data/wwwroot/
-    remote_src: yes
+- name: Create drupal User
+  user:
+    name: drupal
+    shell: /bin/bash
 
-- name: Rename dir name
-  shell: cd /data/wwwroot; if [ ! -d "{{drupal_name}}" ]; then mv *{{drupal_name}}* {{drupal_name}}; fi
+- name: Add drupal Permission
+  shell: |
+    setfacl -R -m  u:drupal:rwx /data/wwwroot/
+    setfacl -m u:drupal:rx /bin/composer
+
+- name: Use composer install drupal
+  shell: composer create-project drupal/recommended-project /data/wwwroot/{{drupal_name}}
+  become_method: su
+  become_user: drupal
 
 # 系统通用
 - name: Permission directory
