@@ -67,9 +67,9 @@
       dest: '{{item.dest}}'
       state: link
       force: yes
-    with_items: 
-      - {{'src: /data/wwwroot/drush/vendor/bin/{{drush_cli.stdout_lines |list}}' ,dest: /usr/bin/}}
-      - {{'src: /data/wwwroot/drupal_console/vendor/bin/{{drupal_console_cli.stdout_lines |list}}' ,dest: /usr/bin/}}
+    with_items:
+      - {src: '/data/wwwroot/drush/vendor/bin/{{drush_cli.stdout_lines |list}}' ,dest: '/usr/bin/{{drush_cli.stdout_lines |list}}'}
+      - {src: '/data/wwwroot/drupal_console/vendor/bin/{{drupal_console_cli.stdout_lines |list}}' ,dest: '/usr/bin/{{drupal_console_cli.stdout_lines |list}}'}
 
   # 系统通用
 - name: Permission directory
