@@ -61,15 +61,21 @@
     shell: ls /data/wwwroot/drupal_console/vendor/bin/
     register: drupal_console_cli
 
-  - name: Set link for cli
+  - name: Set link for drush cli
     file:
-      src: '{{item.src}}'
-      dest: '{{item.dest}}'
+      src: '/data/wwwroot/drush/vendor/bin/{{item}}'
+      dest: '/usr/bin/{{item}}'
       state: link
-      force: yes
-    with_items:
-      - {src: '/data/wwwroot/drush/vendor/bin/{{drush_cli.stdout_lines |list}}' ,dest: '/usr/bin/{{drush_cli.stdout_lines |list}}'}
-      - {src: '/data/wwwroot/drupal_console/vendor/bin/{{drupal_console_cli.stdout_lines |list}}' ,dest: '/usr/bin/{{drupal_console_cli.stdout_lines |list}}'}
+      force: yes 
+    with_items: "{{drush_cli.stdout_lines |list}}"
+
+  - name: Set link for drupal_console cli
+    file:
+      src: '/data/wwwroot/drupal_console/vendor/bin/{{item}}'
+      dest: '/usr/bin/{{item}}'
+      state: link
+      force: yes 
+    with_items: "{{drupal_console_cli.stdout_lines |list}}"
 
   # 系统通用
 - name: Permission directory
