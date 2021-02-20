@@ -33,11 +33,6 @@
     - drupal_console
     - drush
 
-- name: Add drupal Permission
-  shell: |
-    setfacl -R -m  u:drupal:rwx /data/wwwroot/
-    setfacl -m u:drupal:rx /bin/composer
-
 - block:  
   - name: Use composer install drupal 
     shell: |
