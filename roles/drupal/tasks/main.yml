@@ -38,7 +38,9 @@
 
 - block:  
   - name: Use composer install drupal 
-    shell: composer create-project drupal/recommended-project /data/wwwroot/{{drupal_name}}
+    shell: |
+      composer clearcache
+      composer create-project drupal/recommended-project /data/wwwroot/{{drupal_name}}
 
   - name: Use composer install drush cli
     shell: composer require drush/drush
