@@ -15,8 +15,10 @@
 
 # Drupal
 - name: Remove extra dir for sec_installation
-  shell: rm -rf /data/wwwroot/{{drupal_name}}
-  
+  shell: rm -rf vendor drupal_console drush drupal
+  args:
+    chdir: /data/wwwroot
+
 - name: Create drupal User
   user:
     name: drupal
@@ -39,7 +41,6 @@
 - block:  
   - name: Use composer install drupal 
     shell: |
-      rm -rf drupal vendor/
       composer clearcache -n
       composer create-project drupal/recommended-project /data/wwwroot/{{drupal_name}} -n
 
