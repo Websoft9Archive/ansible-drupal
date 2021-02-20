@@ -39,8 +39,9 @@
 - block:  
   - name: Use composer install drupal 
     shell: |
-      composer clearcache
-      composer create-project drupal/recommended-project /data/wwwroot/{{drupal_name}}
+      rm -rf drupal vendor/
+      composer clearcache -n
+      composer create-project drupal/recommended-project /data/wwwroot/{{drupal_name}} -n
 
   - name: Use composer install drush cli
     shell: composer require drush/drush
@@ -51,8 +52,6 @@
     shell: composer require drupal/console:~1.0 --prefer-dist --optimize-autoloader
     args:
       chdir: /data/wwwroot/drupal_console
-  become_method: su
-  become_user: drupal
 
 - block:
   - name: Get  drush cli 
