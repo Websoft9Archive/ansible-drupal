@@ -1,17 +1,11 @@
 # CLI
 
-Drupal provided two sets of CLI tools: drush and Drupal_ console
+This deployment solution have install Drupal CLI tools [Drush,Drupal Console](https://www.drupal.org/docs/user_guide/en/install-tools.html#s-what-are-command-line-tools) by default.  
 
-drupal_console contains the following commands
-```
-drupal  
-php-parse  
-psysh  
-var-dump-server
-```
+Use **SSH** to connect Server, you can run these commands directly:
 
-drush contains the following commands
 ```
+# Drush commands
 dcg  
 drush  
 php-parse 
@@ -19,5 +13,11 @@ psysh
 release  
 robo  
 security-checker  
+var-dump-server
+
+# Drupal Console commands
+drupal  
+php-parse  
+psysh  
 var-dump-server
 ```

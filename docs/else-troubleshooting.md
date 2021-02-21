@@ -1,14 +1,14 @@
 # Troubleshooting
 
-We collect the most common troubleshooting of using Drupal for your reference:
+If you're having trouble with running Drupal, here is a quick guide to solve most common problems.
 
-> Many troubleshooting is closely related to the Server, if you can confirm troubleshooting is related to Cloud Platform, please refer to [Cloud Platform Documentation](https://support.websoft9.com/docs/faq/tech-instance.html)
+> Most faults about the Instance is closely related to the Instance provider, Cloud Platform. Provided you're sure the fault is caused by Cloud Platform, refer to [Cloud Platform Documentation](https://support.websoft9.com/docs/faq/tech-instance.html).
 
 #### Drupal Redirects Error
 
-When add new language for Drupal, it will add redirects rules in the  `.htaccess` file of Drupal root directory.
+When add new language for Drupal, it will add redirects rules in the `.htaccess` at Drupal root directory.
 
-Check your `.htaccess` file in your application root directory, make sure there not any cycle redirects settings
+Check your `.htaccess` file, make sure there not any cycle redirects settings
 
 #### Database service could not be started?
 
@@ -45,4 +45,5 @@ Remember to change the ExecTimeLimit setting back to its original value once the
 Please make sure that your brandwith of Server is more than 5M
 
 #### Apache httpd service restart error
-Please make sure the vhost.conf is correct for you, and you can track and analyze log files from */var/log/httpd*
+
+Please make sure the vhost.conf is correct, and you can track and analyze log files from */var/log/httpd*

@@ -6,13 +6,19 @@ Drupal 预装包，已安装Web服务器 SSL 模块和公共免费证书方案 [
 
 > 除了虚拟主机配置文件之外，HTTPS设置无需修改Nginx任何文件
 
-## 快速参考
+## 快速指南
 
-如果你想使用免费证书，只需在服务器中运行一条命令`certbot`就可以启动证书部署
+### 自动部署
 
-如果你已经申请了商业证书，只需三个步骤，即可完成HTTPS配置
+如果没有申请证书，只需在服务器中运行一条命令`sudo certbot`便可以启动免费证书**自动**申请和部署
 
-### Drupal(LAMP)
+```
+sudo certbot
+```
+
+### 手动部署
+
+#### Drupal(LAMP)
 
 Drupal(LAMP) 即运行环境采用 **Apache** 作为 Web Server  
 
@@ -34,13 +40,14 @@ Drupal(LAMP) 即运行环境采用 **Apache** 作为 Web Server
     SSLEngine on
     SSLCertificateFile  /data/cert/drupal.yourdomain.com.crt
     SSLCertificateKeyFile  /data/cert/drupal.yourdomain.com.key
+    SSLCertificateKeyFile  /data/cert/drupal.yourdomain.com.key
     </VirtualHost>
    #-----HTTPS template end------------
    ```
 4. 修改 ServerName, SSLCertificateFile, SSLCertificateKeyFile等参数的值
 5. 保存， [重启 Apache 服务](/admin-services.md#apache)
 
-### Drupal(LEMP)
+#### Drupal(LEMP)
 
 Drupal(LEMP) 即运行环境采用 **Nginx** 作为 Web Server  
 
@@ -51,6 +58,7 @@ Drupal(LEMP) 即运行环境采用 **Nginx** 作为 Web Server
    listen 443 ssl; 
    ssl_certificate /data/cert/xxx.crt;
    ssl_certificate_key /data/cert/xxx.key;
+   ssl_trusted_certificate /data/cert/chain.pem;
    ssl_session_timeout 5m;
    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
@@ -62,6 +70,6 @@ Drupal(LEMP) 即运行环境采用 **Nginx** 作为 Web Server
 
 ## 详细指南
 
-若参考上面的**简易步骤**仍无法成功设置 HTTPS 访问，请阅读由 Websoft9 提供的 [《HTTPS 专题指南》](https://support.websoft9.com/docs/faq/zh/tech-https.html#nginx)
+若参考上面的**快速指南**仍无法成功设置 HTTPS 访问，请阅读由 Websoft9 提供的 [《HTTPS 专题指南》](https://support.websoft9.com/docs/faq/zh/tech-https.html#nginx)
 
 HTTPS专题指南方案包括：HTTPS 前置条件、HTTPS 配置段模板、注意事项、详细步骤以及故障诊断等具体方案。

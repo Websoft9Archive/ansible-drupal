@@ -31,5 +31,32 @@ df -lh
 
 # 查看内存使用
 free -lh
+
+# 查看服务状态和日志
+systemctl status mysql
+journalctl -u mysql
 ```
 
+#### Drupal 状态报告中有错误怎么办？（见下图）
+
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-status-websoft9.png)
+
+请根据提示完成系统升级或设置，不过这个设置不是必须的，此“错误”称之为“警告”更为合适
+
+#### Drupal8.x 版本以上，安装完后提示一个错误 **Protecting against HTTP HOST Header attacks**
+
+解决方法如下：
+
+1. 通过 WinSCP 远程连接上服务器，进入 */data/wwwroot/drupal/sites/default* 目录，将 settings.php 文件下载到本地；
+
+2. 打开文件，找到如下图所示的配置段：
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-settings-1-websoft9.jpg)
+
+3. 修改为如下图所示的配置（域名请根据实际情况更改，注意红框标注的注释符）：
+   ![](http://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-settings-2-websoft9.jpg)
+
+4. 重新上传至原目录下；
+
+5. 执行 *chown -R apache: /data/wwwroot/drupal* 命令，刷新页面，错误提示消失。
+   
+> 官方参考链接：https://www.drupal.org/docs/8/install/trusted-host-settings

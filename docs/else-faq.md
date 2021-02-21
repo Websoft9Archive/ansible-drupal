@@ -23,7 +23,7 @@ Database configuration information in *config.php* in the [Drupal installation d
 
 #### If there is no domain name, can I deploy Drupal?
 
-Yes, visit Drupal by *http://Internet IP*
+Yes, visit Drupal by *http://Server's Internet IP*
 
 #### What is the password for the database root user?
 
@@ -31,11 +31,13 @@ The password is stored in the server related file: `/credentials/password.txt`
 
 #### Is there a web-base GUI database management tools?
 
-Yes, phpMyAdmin is on it, visit by *http://Internet IP/phpmyadmin*
+Yes, phpMyAdmin (Docker) is on it, visit by *http://Internet IP:9090*
 
 #### How to disable phpMyAdmin access?
 
-Edit the  [phpMyAdmin configuration file](/stack-components.md#phpmyadmin), replace `Require all granted` with `Require ip 192.160.1.0`, then restart Apache service
+```
+sudo docker stop phpmyadmin
+```
 
 #### Is it possible to modify the source path of Drupal?
 

@@ -8,7 +8,7 @@ You should know the differences between the terms **Update** and **Upgrade**([Ex
 
 For Drupal maintenance, focus on the following two Update & Upgrade jobs
 
-- Sytem update(Operating System and Running Environment) 
+- System update(Operating System and Running Environment) 
 - Drupal upgrade 
 
 ## System Update
@@ -26,13 +26,11 @@ apt update && apt upgrade -y
 
 ## Drupal Upgrade
 
-Drupal don't have online Upgrade function, but Drupal have development plan.  
-
-You should kown that manual upgrade is very difficult
+Drupal don't have online Upgrade function, but Drupal have Upgrade solution by **CLI**
 
 1. Log in Drupal, you can see the upgrade reminder if there have latest version of Drupal
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/drupal-update-websoft9.png)  
 
-2. Follow the prompts to manually complete the Drupal kernel update
+2. Refer to [Updating Drupal core via Composer](https://www.drupal.org/docs/updating-drupal/updating-drupal-core-via-composer#update-instructions) to start Upgrade
 
 > More details about upgrade, please refer to [Drupal8 Upgrade](https://www.drupal.org/docs/8/update)

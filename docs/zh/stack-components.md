@@ -42,28 +42,37 @@ MySQL 可视化管理地址: *http://服务器公网IP/phpmyadmin*，用户名�
 
 ### phpMyAdmin
 
-phpMyAdmin installation directory: */data/apps/phpmyadmin*  
-phpMyAdmin configuration file: */data/apps/phpmyadmin/config.inc.php*   
-phpMyAdmin vhost configuration file: */etc/httpd/conf.d/phpMyAdmin.conf* or */etc/nginx/php.conf*  
+phpMyAdmin 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。  
+
+phpMyAdmin directory：*/data/apps/phpmyadmin*  
+phpMyAdmin docker compose file：*/data/apps/phpmyadmin/docker-compose.yml* 
+
+### Docker
+
+Docker 根目录: */var/lib/docker*  
+Docker 镜像目录: */var/lib/docker/image*   
+Docker daemon.json 文件：默认没有创建，请到 */etc/docker* 目录下根据需要自行创建   
 
 ### Redis
 
-Redis configuration file: */etc/redis.conf*  
-Redis data directory: */var/lib/redis*  
-Redis logs file: */var/log/redis/redis.log*
+Redis 配置文件： */etc/redis.conf*  
+Redis 数据目录： */var/lib/redis*  
+Redis 日志文件： */var/log/redis/redis.log*  
+Redis 默认数据库： *redis*  
 
 
 ## 端口号
 
 在云服务器中，通过 **[安全组设置](https://support.websoft9.com/docs/faq/zh/tech-instance.html)** 来控制（开启或关闭）端口是否可以被外部访问。 
 
-本应用建议开启的端口如下：
+通过命令`netstat -tunlp` 看查看相关端口，下面列出可能要用到的端口：
 
 | 名称 | 端口号 | 用途 |  必要性 |
 | --- | --- | --- | --- |
 | HTTP | 80 | 通过 HTTP 访问 Drupal | 必须 |
 | HTTPS | 443 | 通过 HTTPS 访问 Drupal | 可选 |
-| MySQL | 3306 | 远程连接 MySQL | 可选 |
+| TCP | 3306 | 远程连接 MySQL | 可选 |
+| TCP | 9090 | HTTP 访问 phpMyAdmin | 可选 |
 
 ## 版本号
 
@@ -102,4 +111,7 @@ mysql -V
 
 # Redis version
 redis-server -v
+
+# Docker version
+docker -v
 ```

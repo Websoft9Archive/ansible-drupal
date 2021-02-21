@@ -16,8 +16,8 @@ module.exports = [
     title: '实践指南',
     collapsable: false,
     children: [
-      '/zh/solution-smtp',
       '/zh/solution-cli',
+      '/zh/solution-smtp',
       '/zh/solution-https',
       '/zh/solution-backup',
       '/zh/solution-upgrade',
@@ -32,6 +32,7 @@ module.exports = [
       '/zh/admin-services',
       '/zh/admin-mysql',
       '/zh/admin-runtime',
+      ['https://support.websoft9.com/docs/docker/zh','Docker'],
       ['https://support.websoft9.com/docs/linux/zh/admin-practices.html','Linux'],
     ]
   },

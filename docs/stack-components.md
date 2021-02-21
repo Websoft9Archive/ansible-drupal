@@ -35,14 +35,22 @@ Nginx logs file: */var/log/nginx/*
 
 MySQL installation directory: */usr/local/mysql*  
 MySQL data directory: */data/mysql*  
-MySQL configuration file: */etc/my.cnf*    
-MySQL Web Management URL: *http://Internet IP/phpmyadmin*, [get credential](/stack-accounts.md)
+MySQL configuration file: */etc/my.cnf*  
 
-### phpMyAdmin
+MySQL Web Management refer to [MySQL management](/admin-mysql.md)
 
-phpMyAdmin installation directory: */data/apps/phpmyadmin*  
-phpMyAdmin configuration file: */data/apps/phpmyadmin/config.inc.php*   
-phpMyAdmin vhost configuration file: */etc/httpd/conf.d/phpMyAdmin.conf* or */etc/nginx/php.conf*  
+### Docker
+
+Docker root directory: */var/lib/docker*  
+Docker image directory: */var/lib/docker/image*   
+Docker daemon.json: please create it when you need and save to to the directory */etc/docker*   
+
+###  phpMyAdmin
+
+phpMyAdmin is a visual MySQL management tool, is installed based on docker.  
+
+phpMyAdmin directory：*/data/apps/phpmyadmin*  
+phpMyAdmin docker compose file：*/data/apps/phpmyadmin/docker-compose.yml* 
 
 ### Redis
 
@@ -50,22 +58,20 @@ Redis configuration file: */etc/redis.conf*
 Redis data directory: */var/lib/redis*  
 Redis logs file: */var/log/redis/redis.log*
 
-### Docker
-
-OnlyOffice Document Server on Docker included in this stack
-
 ## Ports
 
-You can control(open or shut down) ports by **[Security Group Setting](https://support.websoft9.com/docs/faq/zh/tech-instance.html)** of your Cloud Server whether the port can be accessed from Internet.
+Open or close ports by **[Security Group Setting](https://support.websoft9.com/docs/faq/tech-instance.html)** of your Cloud Server to decide whether the port can be accessed from Internet.  
 
-These ports should be opened for this application:
+You can run the cmd `netstat -tunlp` to check all related ports.  
+
+The following are the ports you may use:
 
 | Name | Number | Use |  Necessity |
 | --- | --- | --- | --- |
 | MySQL | 3306 | Remote connect MySQL | Optional |
 | HTTP | 80 | HTTP requests for Drupal | Required |
 | HTTPS | 443 | HTTPS requests Drupal | Optional |
-| Docker | 8080 | OnlyOffice Document Server on Docker | Optional |
+| phpMyAdmin | 9090 | HTTP request for phpMyAdmin | Optional |
 
 ## Version
 
@@ -105,6 +111,6 @@ mysql -V
 # Redis version
 redis-server -v
 
-# Dokcer:
-docker --version
+# Docker version:
+docker -v
 ```

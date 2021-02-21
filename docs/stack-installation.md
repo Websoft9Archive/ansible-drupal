@@ -10,7 +10,7 @@ If you have completed the Drupal deployment on Cloud Platform, the following ste
 
 ## Drupal Installation Wizard
 
-1. Using local Chrome or Firefox to visit the URL *https://domain* or *https://Internet IP*, start to install  
+1. Using browser to access URL: *https://domain* or *https://Server's Internet IP*, start to install  
 
 2. Choose a language, go to next step 
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/dp01.png)
@@ -30,6 +30,10 @@ If you have completed the Drupal deployment on Cloud Platform, the following ste
 
 7. Installed successfully
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/drupal/dp07.png)
+
+## Drupal Setup Wizard
+
+Coming soon..
 
 > Refer to [Drupal Community Guides](https://www.drupal.org/documentation) to get more details
 

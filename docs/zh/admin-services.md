@@ -28,6 +28,7 @@ sudo systemctl status nginx
 ```
 
 ### PHP-FPM
+
 ```shell
 systemctl start php-fpm
 systemctl stop php-fpm
@@ -44,7 +45,26 @@ sudo systemctl restart mysql
 sudo systemctl status mysql
 ```
 
+### phpMyAdmin
+
+```shell
+sudo docker start phpmyadmin
+sudo docker stop phpmyadmin
+sudo docker restart phpmyadmin
+sudo docker stats pgadmin
+```
+
+### Docker
+
+```shell
+sudo systemctl start docker
+sudo systemctl restart docker
+sudo systemctl stop docker
+sudo systemctl status docker
+```
+
 ### Redis
+
 ```shell
 sudo systemctl start redis
 sudo systemctl stop redis

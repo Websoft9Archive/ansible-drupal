@@ -89,6 +89,6 @@ Drupal supports multiple languages. Here are the main steps to install and set u
 
 > Some Themes's zip package may have the Joomla core, at this time **Install Theme= Install Drupal**
 
-## Drupal recover administrator password
+## Drupal reset password
 
 If you don't remember your administrator password, please refer to the docs [here]((https://www.drupal.org/node/44164)) to reset it

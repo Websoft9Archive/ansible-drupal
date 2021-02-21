@@ -30,11 +30,13 @@ LAMP和LNMP代表支持 Drupal 运行所对应的基础环境，具体参考[环
 
 #### 是否有可视化的数据库管理工具？
 
-有，内置phpMyAdmin，访问地址：http://服务器公网IP/phpmyadmin
+有，内置 phpMyAdmin on Docker，访问地址：http://服务器公网IP:9090
 
-#### 如何禁止phpMyAdmin访问？
+#### 如何禁止 phpMyAdmin 访问？
 
-连接服务器，编辑 phpMyAdmin 配置文件，将其中的 Require all granted 更改为 Require ip 192.160.1.0，然后重启 Apache 服务
+```
+sudo docker stop phpmyadmin
+```
 
 #### 是否可以修改 Drupal 的源码路径？
 

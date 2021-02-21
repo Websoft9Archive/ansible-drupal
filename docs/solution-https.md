@@ -4,15 +4,21 @@ Drupal deployment package has installed the SSL module of Nginx and open Certifi
 
 > In addition to the vhost configuration file, HTTPS settings do not need to modify any files in Nginx
 
-## Quick configuration
+## Quick start
 
-If you want to use a free certificate, just run the one command `certbot` on your instance to start the HTTPS deployment.
+### Automatic deployment
+
+If you want to use a free certificate, just run the one command `sudo certbot` on your instance to start the HTTPS deployment.
+
 ```
 sudo certbot
 ```
 
+### Manual deployment
+
 If you have applied for a commercial certificate, complete the HTTPS configuration in just three steps:
-### For Drupal (LAMP)
+
+#### For Drupal (LAMP)
 
 LAMP means that **Apache** for Web Server
 
@@ -34,13 +40,14 @@ LAMP means that **Apache** for Web Server
     SSLEngine on
     SSLCertificateFile  /data/cert/drupal.yourdomain.com.crt
     SSLCertificateKeyFile  /data/cert/drupal.yourdomain.com.key
+   SSLCertificateKeyFile  /data/cert/drupal.yourdomain.com.key
     </VirtualHost>
    #-----HTTPS template end------------
    ```
 4. Modify ServerName, SSLCertificateFile, SSLCertificateKeyFile
 5. Save it and [Restart Apache service](/admin-services.md#apache)
 
-### For Drupal (LEMP)
+#### For Drupal (LEMP)
 
 LEMP means that **Nginx** for Web Server
 
@@ -52,6 +59,7 @@ LEMP means that **Nginx** for Web Server
    listen 443 ssl; 
    ssl_certificate /data/cert/xxx.crt;
    ssl_certificate_key /data/cert/xxx.key;
+   ssl_trusted_certificate /data/cert/chain.pem;
    ssl_session_timeout 5m;
    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
