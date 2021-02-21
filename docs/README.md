@@ -1,23 +1,77 @@
----
-home: false
----
+# Drupal Cloud Installer
 
-# Overview
+![](https://libs.websoft9.com/common/websott9-cloud-installer.png) 
 
-This documentation is provided by [Websoft9](https://www.websoft9.com/), it can help users to acquire skills of Drupal Deployment, Installation, Configuration, HTTPS, SMTP, Backup, Upgrade, Connect Instance and more.
+## Introduction
 
-[Drupal](https://www.drupal.org/)  is content management software. It’s used to make many of the websites and applications you use every day. Drupal has great standard features, like easy content authoring, reliable performance, and excellent security. But what sets it apart is its flexibility; modularity is one of its core principles. Its tools help you build the versatile, structured content that dynamic web experiences need.
+[English](/README.md) | [简体中文](/README-zh.md)  
 
-![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-gui-websoft9.png)
+**Drupal Cloud Installer**, developed by [Websoft9](https://www.websoft9.com), is an automatic installation program of [Drupal](https://drupal.org/) based on Ansible and shell. It helps user install Drupal and pre-configure required items automatically and users only need to run a command on Linux. It simplifies the complicated installation and initialization process.  
 
-## Demo
+## System Requirement
 
-Visit [Drupal Official Online Demo](https://www.drupal.org/try-drupal) now
+System Requirement to install this repository are as following：
 
-## Improve
+| Conditions       | Details                               | Notes                |
+| ------------------- | --------------------------------| -------------------- |
+| Operating System   | CentOS7.x, Amazon Linux2 | Optional                 |
+| Public Cloud     | AWS, Azure, Alibaba Cloud, HUAWEI ClOUD, Tencent Cloud    | Optional                 |
+| Private Cloud     | KVM, VMware, VirtualBox, OpenStack    | Optional                 |
+| Server Configuration | vCPU no less than 1 core, Memory no less than  1 GIB, Storage no less than 10 GB, Bandwidth no less than 100M ||
 
-This document will continue to improve and broadly absorb the needs of users. If you have good idea, please don't hesitate to give us feedback by "Edit this page on GitHub", and welcome you to fork this documentation on [Github](https://github.com/Websoft9/ansible-drupal)
+To learn more information, please view [Server Requirements](https://www.drupal.org/docs/user_guide/en/install-requirements.html).
 
-## Scope
+## Ecosystem
 
-The image library provided by Websoft9 has released on the major Cloud Platform and provides Chinese and English documents, which can be easily used by cloud users worldwide.
+Core components of this repository: Drupal + Apache/Nginx + MySQL + PHP, phpMyAdmin on Docker
+
+Learn more about [Parameters](/docs/stack-components.md).
+
+## Installation
+
+You can install it by thi Cloud Installer solution all in one. In addition, you can deploy image published on major Cloud Platform by Websoft9.
+
+#### All-in-one Installer
+
+Run the automatic installation script with **root** authority to start the installation. If necessary, users need to make interactive choices, and then wait patiently until the installation is successful.
+
+```
+$ sudo su -
+$ wget -N https://raw.githubusercontent.com/Websoft9/ansible-linux/main/scripts/install.sh; bash install.sh -r drupal
+```
+
+If the network is broken or blocked, SSH will be interrupted and the installation will fail. Please reinstall.
+
+#### Image on Cloud 
+
+Follow our [Drupal image](https://apps.websoft9.com/drupal) for installation on major Cloud Platform.
+
+## Documentation
+
+To get information about initial installation, default username and password, HTTPS, SMTP, Backup, Upgrade and more, please view **Drupal Administrator Guide** ([English](https://support.websoft9.com/docs/drupal) | [简体中文](https://support.websoft9.com/docs/drupal/zh))
+
+## Changelog
+
+Detailed changes are documented in the [CHANGELOG](/CHANGELOG.md).
+
+## License
+
+[LGPL-3.0](/License.md), Additional Terms: It is not allowed to publish free or paid image based on this repository in any Cloud platform's Marketplace.
+
+Copyright (c) 2016-present, Websoft9
+
+This program provided by Websoft9 contains a series of software with separate copyright notices and license terms. Your use of the source code for the software included is subject to the terms and conditions of its own license.
+
+## FAQ
+
+#### Can I run this repository on Ansible Tower? 
+
+Yes.
+
+#### How to install and view the latest release?
+
+This deployment solution use composer to install the latest version of Drupal, and you can get the Drupal version from [Drupal repository](https://github.com/drupal/drupal/releases)
+
+#### Is the default password safe?
+
+Drupal Cloud Installer use the random password solution, every installation have different password, that mean your password is different from other users
