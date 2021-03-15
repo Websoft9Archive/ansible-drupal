@@ -15,11 +15,11 @@
    SMTP username: websoft9@163.com
    SMTP password: #wwBJ8    //此密码不是邮箱密码，是需要通过163邮箱后台设置去获取的授权码
    ```
-2. 下载 [SMTP Authentication Support](https://www.drupal.org/project/smtp)（Drupal 默认没有安装 SMTP 模块），在线安装
+2. 获取 [SMTP Authentication Support](https://www.drupal.org/project/smtp) 下载链接（Drupal 默认没有安装 SMTP 模块），在线安装
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-installsmtp-websoft9.png)
 
-3. 打开：【管理】>【扩展】，找到【SMTP Authentication Support】，点击【安装】按钮
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-setsmtp-websoft9.png)
+3. 打开：【管理】>【扩展】，找到【SMTP Authentication Support】，点击【Install】完成最终安装步骤
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-installsmtp002-websoft9.png)
 
 3. 打开：【管理】>【配置】，找到【SMTP Authentication Support】，配置它
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/drupal/drupal-setsmtp-websoft9.png)
