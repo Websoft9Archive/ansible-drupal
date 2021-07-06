@@ -7,7 +7,7 @@ The Drupal deployment package contains a sequence software (referred to as "comp
 ### Drupal
 
 Drupal installation directory: */data/wwwroot/drupal*  
-Drupal configuration file: */data/wwwroot/drupal/sites/default/settings.php*   
+Drupal configuration file: */data/wwwroot/drupal/web/sites/default/settings.php*   
 
 ### PHP
 
