@@ -93,3 +93,7 @@
 
   - name: restart php-fpm
     service: name=php-fpm state=restarted
+
+- name: Check drupal version
+  shell: |
+    sudo echo "drupal version:" $(cat /data/wwwroot/drupal/web/core/lib/Drupal.php |grep -i "const version" |awk -F "'" '{print  $2}') |sudo tee -a /data/logs/install_version.txt  
