@@ -62,7 +62,7 @@ This program provided by Websoft9 contains a series of software with separate co
 
 #### How to install and view the latest release?
 
-This repository install way is Docker install, you can  view the version from [Official URL](https://hub.docker.com/_/drupal?tab=tags&page=1&ordering=last_updated).  
+This repository install way is Composer install, you can  view the version from [Official URL](https://github.com/drupal/drupal/tags).  
 We will check [Release version](https://github.com/Websoft9/ansible-drupal/releases) regularly. Update and test this project to ensure that users can successfully install the required version of Drupal.
 
 #### Can I run this repository on Ansible Tower? 
