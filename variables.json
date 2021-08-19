@@ -11,8 +11,8 @@
   "requirements_configure_url": "https://www.drupal.org/docs/system-requirements",
   "components": "Drupal, Apache/Nginx, MySQL, PHP, Docker, phpmyadmin on docker",
   "install_way": {
-    "en": "Docker install",
-    "zh": "Docker 安装"
+    "en": "Composer install",
+    "zh": "Composer  安装"
   },
-  "install_url": "https://hub.docker.com/_/drupal?tab=tags&page=1&ordering=last_updated"
+  "install_url": "https://github.com/drupal/drupal/tags"
 }
